@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="JokesApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- <script src="js/angular.min.js"></script>
+    <script src="app/app.js"></script> -->
+
+    <!--Angular libraries-->
+    <script src="js/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
+    <script src="js/ui-bootstrap.js"></script>
+    <script src="js/ui-bootstrap.min.js"></script>
+    <script src="app/app.js"></script>
+
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body ng-controller="JokesCtrl as vm">
+  
+    <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span> 
+                    </button>
+                    <a class="navbar-brand" href="#">Jokes University</a>
+                  </div>
+                  <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                      <li class="active"><a href="#">Home</a></li>
+                       
+                    </ul>
+                  </div>
+                </div>
+     </nav>
+    <h2>Jokes Getter App</h2>
+    
+    <button type="button" class="btn btn-success btn-lg" data-ng-click="getJokes()">Get Jokes</button>
+      
+     <div data-ng-show="loading=== true">.......Loading Jokes</div>
+     <div data-ng-repeat="joke in jokes">
+       <h2 class="list-group" style="color: green">Category: <span>{{joke.type}}</span></h2>
+       <h3 class="list-group-item">Joke: <span>{{joke.setup}}</span></h3>
+       <h4>{{joke.punchline}}</h4>
+     </div>
+</body>
+</html>
